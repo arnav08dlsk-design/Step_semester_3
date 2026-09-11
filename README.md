@@ -9,7 +9,7 @@ Added Week 4 classwork (Library Book Cataloguing, Payroll Batch Bonus, Late Fees
 
 Next Session Plan:
 
-Move on to Week 5 (Access Modifiers and Encapsulation) and set up feature/session_5 from develop.
+WEEK 5
 
 Issues Faced:
 
