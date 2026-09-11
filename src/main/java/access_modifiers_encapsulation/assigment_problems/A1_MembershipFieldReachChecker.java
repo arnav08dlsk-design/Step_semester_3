@@ -1,6 +1,3 @@
-import java.util.LinkedHashMap;
-import java.util.Map;
-
 public class A1_MembershipFieldReachChecker {
 
     static class AccessChecker {
@@ -19,31 +16,40 @@ public class A1_MembershipFieldReachChecker {
             }
         }
 
-        // Groups by modifier, not as one flat total. Every one of the four modifiers always
-        // appears in the summary, even if it had zero attempts in this particular batch.
+        // Groups by modifier, not as one flat total — using plain counters and arrays,
+        // the same tools this course has used all along, instead of a Map.
+        // Every one of the four modifiers always appears in the summary, even if it had
+        // zero attempts in this particular batch.
         static String summarizeByModifier(String[][] attempts) {
-            String[] modifiers = {"private", "default", "protected", "public"};
-            Map<String, int[]> counts = new LinkedHashMap<>();
-            for (String m : modifiers) {
-                counts.put(m, new int[]{0, 0}); // [allowed, denied]
-            }
+            int privateAllowed = 0, privateDenied = 0;
+            int defaultAllowed = 0, defaultDenied = 0;
+            int protectedAllowed = 0, protectedDenied = 0;
+            int publicAllowed = 0, publicDenied = 0;
 
             for (String[] attempt : attempts) {
                 String modifier = attempt[0];
-                String result = classifyAccess(modifier, attempt[1]);
-                int[] bucket = counts.get(modifier);
-                if (result.equals("ALLOWED")) bucket[0]++;
-                else bucket[1]++;
+                boolean allowed = classifyAccess(modifier, attempt[1]).equals("ALLOWED");
+
+                switch (modifier) {
+                    case "private":
+                        if (allowed) privateAllowed++; else privateDenied++;
+                        break;
+                    case "default":
+                        if (allowed) defaultAllowed++; else defaultDenied++;
+                        break;
+                    case "protected":
+                        if (allowed) protectedAllowed++; else protectedDenied++;
+                        break;
+                    case "public":
+                        if (allowed) publicAllowed++; else publicDenied++;
+                        break;
+                }
             }
 
-            StringBuilder sb = new StringBuilder();
-            for (int i = 0; i < modifiers.length; i++) {
-                int[] bucket = counts.get(modifiers[i]);
-                sb.append(modifiers[i]).append(": ").append(bucket[0]).append(" allowed / ")
-                        .append(bucket[1]).append(" denied");
-                if (i < modifiers.length - 1) sb.append(" | ");
-            }
-            return sb.toString();
+            return "private: " + privateAllowed + " allowed / " + privateDenied + " denied | "
+                    + "default: " + defaultAllowed + " allowed / " + defaultDenied + " denied | "
+                    + "protected: " + protectedAllowed + " allowed / " + protectedDenied + " denied | "
+                    + "public: " + publicAllowed + " allowed / " + publicDenied + " denied";
         }
     }
 
