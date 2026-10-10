@@ -1,14 +1,13 @@
-Date: 13-09-2026
+Date: 10-10-2026
 
 Today's Work:
 
-Added Week 6 classwork (Inheritance & Polymorphism practice: Library Membership Foundation & Batch Enrollment, Three Branches of the Membership Tree, Student Discount & Fine Ledger, Weekly Circulation Report, Membership Numbers/Renewal Codes/Nightly Audit) to feature/session_6.
-Added Week 6 assignment (Gym Membership Foundation & Batch Trial Sign-up, Three Tiers of Gym Membership, Premium Loyalty Discount & Late-Fee Ledger, Monthly Attendance Announcer, Membership Numbers/Referral Codes/Weekly Check-in) to feature/session_6.
+Added Week 7 classwork (Abstraction & Interfaces practice: Talking Toy Box, Warehouse Label Printer, Orchestra Warm-Up Routine, Smart Kitchen Assistant, Package Drop-Off Log) and Week 7 assignment (Morning Wake-Up Circuit, Gallery Description Cards, Backyard Toolshed Routine, Digital Classroom Setup, Skyline Delivery Fleet) to feature/session_7. Added Week 8 classwork (OOP Design & UML practice: Vehicle Rental System, Employee Leave Request Workflow, Online Examination System, Hotel Booking System, Payment Processing) and Week 8 assignment (Hostel Laundry Queue, Assignment Submission Portal, Campus Premiere Ticket Counter, FitZone Membership Desk, Campus Notice Broadcaster) to feature/session_8. Added Week 9 classwork (Data Structures practice: Library Catalog Lookup, Warehouse Grid Summary, Pair With Target Sum, Maximize Area Between Boundaries) and Week 9 assignment (Class Topper Finder, Merging Two Token Queues, Most Popular Canteen Order, Hot Weather Alert Windows, Ticket Price Slot Finder) to feature/session_9.
 
 Next Session Plan:
 
-Move on to the next topic/session and set up feature/session_7 from develop.
+Move on to the next topic/session and set up feature/session_10 from main.
 
 Issues Faced:
 
-None
+Cloned the wrong repository at first (HelloApp instead of Step_semester_3); fixed by re-cloning Step_semester_3 into a fresh folder.
