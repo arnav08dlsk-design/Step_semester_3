@@ -8,6 +8,3 @@ Next Session Plan:
 
 Move on to the next topic/session and set up feature/session_10 from main.
 
-Issues Faced:
-
-Cloned the wrong repository at first (HelloApp instead of Step_semester_3); fixed by re-cloning Step_semester_3 into a fresh folder.
